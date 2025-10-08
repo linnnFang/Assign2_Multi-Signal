@@ -1,7 +1,7 @@
 #  FINM325 — Multi-Signal Strategy & Backtesting
 
 **Author:** Lin Fang  
-**Course:** FINM325 — Signal Engineering, Execution Modeling & Backtesting  
+**Course:** FINM325 — Assignment 2 Signal Engineering, Execution Modeling & Backtesting  
 **Date:** Fall 2025  
 
 This project builds a **modular trading simulator** for the S&P 500 universe.  
@@ -30,37 +30,36 @@ All strategies start with **$1,000,000**, no leverage, no shorting, and execute 
 ## Repository Structure
 
 Assign2_Multi-Signal/
-│
-├── PriceLoader.py # Download & clean S&P 500 price data (2005–2025)
-│ # Handles batching, API limits, and saves parquet files
-│
-├── BenchmarkStrategy.py # Baseline static buy-and-hold strategy
-│ # Tracks cash, holdings, and equity over time
-│
-├── MovingAverageStrategy.py # 20/50-day MA crossover signal generation
-│
-├── VolatilityBreakoutStrategy.py # Signal based on breakout above rolling 20-day std
-│
-├── MACDStrategy.py # MACD and signal line crossover implementation
-│
-├── RSIStrategy.py # RSI < threshold (default 30) buy signal
-│
-├── analysis.py # Utility functions for trade logs and performance summaries
-│
-├── StrategyComparison.ipynb # Jupyter notebook for visualization & performance comparison
-│ # Includes signal overlays, holdings, equity, and cumulative PnL
-│
-├── data/ # Local data storage (ignored in .gitignore)
-│ ├── adjclose/ # Adjusted close prices per ticker (.parquet)
-│ └── universe/ # S&P 500 ticker list snapshot
-│
-├── logs/ # Optional logs of runs and download errors
-│
-├── results/ # Optional output charts and performance summaries
-│
-└── README.md # This file
 
+PriceLoader.py:
+- Download & clean S&P 500 price data (2005–2025)
+- Handles batching, API limits, and saves parquet files
 
+BenchmarkStrategy.py
+- Baseline static buy-and-hold strategy
+- Tracks cash, holdings, and equity over time
+
+MovingAverageStrategy.py
+- 20/50-day MA crossover signal generation
+
+VolatilityBreakoutStrategy.py
+- Signal based on breakout above rolling 20-day std
+
+MACDStrategy.py 
+- MACD and signal line crossover implementation
+
+RSIStrategy.py 
+- RSI < threshold (default 30) buy signal
+
+analysis.py 
+- Utility functions for trade logs and performance summaries
+
+StrategyComparison.ipynb 
+-  Jupyter notebook for visualization & performance comparison
+-  Includes signal overlays, holdings, equity, and cumulative PnL
+
+README.md 
+-  This file
 ---
 
 ##  Workflow Summary
